@@ -11,7 +11,11 @@ app.use(helmet());
 
 // API Routing
 app.get("/", (req: Request, res: Response) =>
-  res.status(200).send(`HELLO Jenkins auto deploy!!!!!!!!!!`)
+  res
+    .status(200)
+    .send(
+      `HELLO Jenkins auto deploy 와 나 자동배포 성공했어 이게 CI/CD!!!!!!!!!!`
+    )
 );
 
 app.listen(8008, () => console.log(`listening on localhost: ${8008}`));
