@@ -1,0 +1,10 @@
+#!/bin/sh
+
+ssh -i "~/hau-server.pem" ubuntu@13.124.33.144 <<EOF
+    cd ~/jenkins-test
+    git pull origin production
+    npm install
+    npm run build
+    npm run start:pm2
+    exit
+EOF
